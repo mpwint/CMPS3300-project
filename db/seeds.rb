@@ -10,6 +10,8 @@ some_users = [
   {:name => 'Zach', :email => 'zseymour@tulane.edu', :major => 'CS'}
 ]
   
+some_users.destroy
+
 some_users.each do |user|
   User.create!(user)
 end
