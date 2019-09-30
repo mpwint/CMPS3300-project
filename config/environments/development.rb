@@ -1,5 +1,8 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  
+  config.hosts << "2734c66f24dc46eba078d50eff145fa2.vfs.cloud9.us-east-2.amazonaws.com"
+  config.action_dispatch.default_headers['X-Frame-Options'] = 'allow-from https://2734c66f24dc46eba078d50eff145fa2.vfs.cloud9.us-east-2.amazonaws.com'
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
@@ -59,4 +62,6 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+  
+  config.hosts.clear
 end
