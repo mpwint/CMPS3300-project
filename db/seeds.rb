@@ -5,13 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-some_users = [
-  {:name => 'Mary', :email => 'mpwint@tulane.edu', :major => 'CS'},
-  {:name => 'Zach', :email => 'zseymour@tulane.edu', :major => 'CS'}
-]
-  
-some_users.destroy
 
-some_users.each do |user|
-  User.create!(user)
+20.times do
+  User.create!([{
+    :name => Faker::Name.name,
+    :email => Faker::Internet.email,
+    :major => 'CS'
+  }])
 end
