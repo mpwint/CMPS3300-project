@@ -10,6 +10,7 @@ gem 'jbuilder',   '2.9.1'
 gem 'bootsnap',   '1.4.4', require: false
 gem "aws-sdk-s3", require: false
 gem 'faker', '~> 1.6', '>= 1.6.6'
+gem 'devise', '~> 4.2'
 
 group :development, :test do
   gem 'sqlite3', '1.4.1'
