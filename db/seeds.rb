@@ -8,19 +8,26 @@
 
 User.destroy_all
 
-20.times do
+some_users = Array.new
+
+1000.times do |index|
+  some_users.push(:user_id => index+1, :name => Faker::Name.name)
+end
+
+some_users.each do |user|
   User.create!([{
-    :name => Faker::Name.name,
-    :email => Faker::Internet.email,
+    :name => user[:name].to_s,
+    :email => user[:name].to_s.downcase.gsub(/[^a-z0-9]/i, '') + '@tulane.edu',
     :major => 'CS'
   }])
 end
 
 Post.destroy_all
 
-20.times do
+some_users.each do |user|
   Post.create!([{
-    :poster_email => Faker::Internet.email,
+    :user_id => user[:user_id],
+    :poster_email => user[:name].to_s.downcase.gsub(/[^a-z0-9]/i, '') + '@tulane.edu',
     :description => Faker::Quote.famous_last_words,
   }])
 end
