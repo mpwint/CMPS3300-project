@@ -3,12 +3,12 @@
 <h1>Users</h1>
 
 <%= link_to 'New User', new_user_path %>
-<table>
+<table border="1" class = "usersTable">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Major</th>
+      <th><%= sortable "name" %></th>
+      <th><%= sortable "email" %></th>
+      <th><%= sortable "major" %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
