@@ -21,6 +21,6 @@ Post.destroy_all
 20.times do
   Post.create!([{
     :poster_email => Faker::Internet.email,
-    :description => Faker::Quote.famous_last_words
+    :description => Faker::Quote.famous_last_words,
   }])
 end
