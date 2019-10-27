@@ -70,7 +70,7 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:poster_email, :description)
+      params.require(:post).permit(:user_id, :poster_email, :description)
     end
     
     def sort_column
