@@ -4,12 +4,12 @@
 
 <%= link_to 'New Post', new_post_path %>
 
-<table>
+<table border="1" class="postsTable">
   <thead>
     <tr>
-      <th>Poster email</th>
-      <th>Description</th>
-      <th>Date and Time</th>
+      <th><%= sortPosts "poster_email" %></th>
+      <th><%= sortPosts "description" %></th>
+      <th><%= sortPosts "updated_at" %></th>
       <th colspan="3"></th>
     </tr>
   </thead>

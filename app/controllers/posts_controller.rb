@@ -3,8 +3,9 @@ class PostsController < ApplicationController
 
   # GET /posts
   # GET /posts.json
+  helper_method :sort_column, :sort_direction
   def index
-    @posts = Post.all
+    @posts = Post.order(sort_column + ' ' + sort_direction)
   end
 
   # GET /posts/1
@@ -70,5 +71,13 @@ class PostsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:poster_email, :description)
+    end
+    
+    def sort_column
+      params[:sort] || "poster_email"
+    end
+    
+    def sort_direction
+      params[:direction] || "asc"
     end
 end
