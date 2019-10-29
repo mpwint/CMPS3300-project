@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_27_201723) do
+ActiveRecord::Schema.define(version: 2019_10_27_201348) do
 
   create_table "posts", force: :cascade do |t|
     t.string "poster_email"
-    t.string "description"
+    t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
