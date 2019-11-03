@@ -6,6 +6,7 @@
 <table border="1" class = "usersTable">
   <thead>
     <tr>
+      <th> UserID </th>
       <th><%= sortable "name" %></th>
       <th><%= sortable "email" %></th>
       <th><%= sortable "major" %></th>
@@ -16,6 +17,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <td><%= user.id %></td>
         <td><%= link_to user.name, user %></td>
         <td><%= user.email %></td>
         <td><%= user.major %></td>

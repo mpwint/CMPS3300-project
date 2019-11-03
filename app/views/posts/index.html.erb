@@ -7,10 +7,10 @@
 <table border="1" class="postsTable">
   <thead>
     <tr>
-       <th><%= sortPosts "PosterID" %></th>
-      <th><%= sortPosts "poster_email" %></th>
+      <th>PosterID</th>
+      <th><%= sortPosts "Poster" %></th>
       <th><%= sortPosts "Description" %></th>
-      <th><%= sortPosts "updated_at" %></th>
+      <th><%= sortPosts "Updated_at" %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,7 +19,7 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.user_id %></td>
-        <td><%= post.poster_email %></td>
+        <td><%= link_to post.poster_email, post.user %></td>
         <td><%= link_to post.description, post %></td>
         <td><%= post.updated_at %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>

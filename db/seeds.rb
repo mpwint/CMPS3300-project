@@ -7,27 +7,29 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+Post.destroy_all
 
 some_users = Array.new
 
-1000.times do |index|
-  some_users.push(:user_id => index+1, :name => Faker::Name.name)
+majors = ['Biology', 'Chemistry', 'Environmental Science', 'Marine Science', 'Dance', 'Theatre', 'English', 'History', 'Philosophy', 'Political Science', 'Psychology', 'Sociology']
+
+20.times do |index|
+  some_users.push(:name => Faker::Name.name)
 end
 
 some_users.each do |user|
   User.create!([{
     :name => user[:name].to_s,
     :email => user[:name].to_s.downcase.gsub(/[^a-z0-9]/i, '') + '@tulane.edu',
-    :major => 'CS'
+    :major => majors[rand(0..majors.length)]
   }])
 end
 
-Post.destroy_all
 
-some_users.each do |user|
+20.times do |index|
   Post.create!([{
-    :user_id => user[:user_id],
-    :poster_email => user[:name].to_s.downcase.gsub(/[^a-z0-9]/i, '') + '@tulane.edu',
-    :description => Faker::Quote.famous_last_words,
+    :user_id => index+1,
+    :poster_email => User.find(index+1).email,
+    :description => Faker::Quote.famous_last_words
   }])
 end
