@@ -29,8 +29,8 @@ end
 
 20.times do |index|
   Post.create!([{
-    :user_id => index+1,
-    :poster_email => User.find(index+1).email,
+    :user_id => User.first.id+index,
+    :poster_email => User.find(User.first.id+index).email,
     :description => Faker::Quote.famous_last_words
   }])
 end
