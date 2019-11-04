@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>New User Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+  
 <%= form_with(model: user, local: true) do |form| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
@@ -11,22 +23,48 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="field col-xs-12 col-sm-6 col-sm-offset-3">
+    <%= form.label :name, :class => "col-sm-2 control-label" %>
+    <div class = "col-sm-10">
+    <%= form.text_field :name, :class => "form-control" %>
+    </div>
   </div>
 
+<<<<<<< HEAD
   <div class="field">
     <%= form.label :email %>
     <%= form.email_field :email %>
+=======
+  <div class="field col-xs-12 col-sm-6 col-sm-offset-3">
+    <%= form.label :email, :class => "col-sm-2 control-label" %>
+    <div class = "col-sm-10">
+    <%= form.email_field :email, :class => "form-control" %>
+    </div>
+>>>>>>> 7876067c0148b1d6a9dcacff85dfc84b72ded93e
   </div>
 
-  <div class="field">
-    <%= form.label :major %>
-    <%= form.text_field :major %>
+  <div class="field col-xs-12 col-sm-6 col-sm-offset-3">
+    <%= form.label :major, :class => "col-sm-2 control-label" %>
+    <div class = "col-sm-10">
+    <%= form.text_field :major, :class => "form-control" %>
+    </div>
   </div>
+  
+  <style>
+    .btn-green {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745
+    }
+    .btn-red {
+    color: #fff;
+    background-color: #cb2431;
+    border-color: #cb2431
+    }
+  </style>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions col-xs-12 col-sm-6 col-sm-offset-4">
+    <button class="btn btn-sm btn-primary btn-green" type="submit">Create User</button>
+    <button class="btn btn-sm btn-primary btn-red" type="link_to users_path">Back</button>
   </div>
 <% end %>
