@@ -30,17 +30,11 @@
     </div>
   </div>
 
-<<<<<<< HEAD
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.email_field :email %>
-=======
   <div class="field col-xs-12 col-sm-6 col-sm-offset-3">
     <%= form.label :email, :class => "col-sm-2 control-label" %>
     <div class = "col-sm-10">
     <%= form.email_field :email, :class => "form-control" %>
     </div>
->>>>>>> 7876067c0148b1d6a9dcacff85dfc84b72ded93e
   </div>
 
   <div class="field col-xs-12 col-sm-6 col-sm-offset-3">
@@ -50,21 +44,4 @@
     </div>
   </div>
   
-  <style>
-    .btn-green {
-    color: #fff;
-    background-color: #28a745;
-    border-color: #28a745
-    }
-    .btn-red {
-    color: #fff;
-    background-color: #cb2431;
-    border-color: #cb2431
-    }
-  </style>
-
-  <div class="actions col-xs-12 col-sm-6 col-sm-offset-4">
-    <button class="btn btn-sm btn-primary btn-green" type="submit">Create User</button>
-    <button class="btn btn-sm btn-primary btn-red" type="link_to users_path">Back</button>
-  </div>
 <% end %>

@@ -18,11 +18,16 @@
     <ul class="nav navbar-nav">
       <li><a href="/users">Users</a></li>
       <li><a href="/posts">Posts</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
       <li><a href="/users/new"><span class="glyphicon glyphicon-user"></span> New User </a></li>
       <li><a href="/posts/new"><span class="glyphicon glyphicon-edit"></span> New Post </a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login </a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <% if user_signed_in? %>
+        <li><a href = <%= edit_user_registration_path(current_user) %>><span class="glyphicon glyphicon-user"></span><%= current_user.email %></a></li>
+        <li><a href="/users/sign_out"><span class="glyphicon glyphicon-log-in"></span> Logout </a></li>
+      <% else %>
+        <li><a href="/users/sign_in"><span class="glyphicon glyphicon-log-in"></span> Login </a></li>
+      <% end %>
     </ul>
   </div>
 </nav>

@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+.btn-primary.btn-green {
+color: #fff;
+background-color: #28a745;
+border-color: #28a745
+}
+
+.btn-primary.btn-red {
+color: #fff;
+background-color: #cb2431;
+border-color: #cb2431
+}

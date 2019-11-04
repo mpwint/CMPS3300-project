@@ -2,5 +2,7 @@
 
 <%= render 'form', user: @user %>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<div class="actions col-xs-12 col-sm-6 col-sm-offset-4">
+  <button class="btn btn-sm btn-primary btn-green"><%= link_to 'Show', @user %></button>
+  <button class="btn btn-sm btn-primary btn-red"><%= link_to 'Back', users_path %></button>
+</div>
