@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Users</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -15,7 +15,7 @@
   <table class="table table-hover">
     <thead>
       <tr>
-        <th><%= sortable "name" %></th>
+      <th><%= sortable "name" %></th>
       <th><%= sortable "email" %></th>
       <th><%= sortable "major" %></th>
       <th colspan="3"></th>
@@ -71,9 +71,9 @@ body {
 
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
-<div style="background-color:black;color:white;padding:30px">Scroll Down</div>
-<div style="background-color:lightgrey;padding:30px 30px 2500px">This example demonstrates how to create a "scroll to top" button that becomes visible 
-  <strong>when the user starts to scroll the page</strong>.</div>
+<!--<div style="background-color:black;color:white;padding:30px">Scroll Down</div>-->
+<!--<div style="background-color:lightgrey;padding:30px 30px 2500px">This example demonstrates how to create a "scroll to top" button that becomes visible -->
+<!--  <strong>when the user starts to scroll the page</strong>.</div>-->
 
 <script>
 //Get the button
@@ -99,35 +99,6 @@ function topFunction() {
 
 </body>
 </html>
-
-<!--<p id="notice"><%= notice %></p>-->
-
-<!--<h1>Users</h1>-->
-
-<!--<%= link_to 'New User', new_user_path %>-->
-<!--<table border="1" class = "usersTable">-->
-<!--  <thead>-->
-<!--    <tr>-->
-<!--      <th><%= sortable "name" %></th>-->
-<!--      <th><%= sortable "email" %></th>-->
-<!--      <th><%= sortable "major" %></th>-->
-<!--      <th colspan="3"></th>-->
-<!--    </tr>-->
-<!--  </thead>-->
-
-<!--  <tbody>-->
-<!--    <% @users.each do |user| %>-->
-<!--      <tr>-->
-<!--        <td><%= link_to user.name, user %></td>-->
-<!--        <td><%= user.email %></td>-->
-<!--        <td><%= user.major %></td>-->
-<!--        <td><%= link_to 'Edit', edit_user_path(user) %></td>-->
-<!--        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
-<!--      </tr>-->
-<!--    <% end %>-->
-<!--  </tbody>-->
-<!--</table>-->
-
 <br>
 
 
