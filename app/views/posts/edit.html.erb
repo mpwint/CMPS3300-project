@@ -2,5 +2,7 @@
 
 <%= render 'form', post: @post %>
 
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
+<div class="actions col-xs-12 col-sm-6 col-sm-offset-4">
+  <button class="btn btn-sm btn-primary btn-green"><%= link_to 'Show', @post %></button>
+  <button class="btn btn-sm btn-primary btn-red"><%= link_to 'Back', posts_path %></button>
+</div>

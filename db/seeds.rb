@@ -20,6 +20,7 @@ end
 some_users.each do |user|
   User.create!([{
     :name => user[:name].to_s,
+    :password => user[:name].to_s.downcase.gsub(/[^a-z0-9]/i, ''),
     :email => user[:name].to_s.downcase.gsub(/[^a-z0-9]/i, '') + '@tulane.edu',
     :major => majors[rand(0..majors.length)]
   }])
@@ -28,8 +29,8 @@ end
 
 20.times do |index|
   Post.create!([{
-    :user_id => index+1,
-    :poster_email => User.find(index+1).email,
+    :user_id => User.first.id+index,
+    :poster_email => User.find(User.first.id+index).email,
     :description => Faker::Quote.famous_last_words
   }])
 end
