@@ -26,11 +26,9 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.user_id %></td>
-        <td><%= post.poster_email %></td>
+        <td><%= link_to post.poster_email, post.user %></td>
         <td><%= link_to post.description, post %></td>
         <td><%= post.updated_at %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
