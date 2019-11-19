@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  require 'commontator'
+  mount Commontator::Engine => '/commontator'
   devise_for :users
   resources :posts
   resources :users
