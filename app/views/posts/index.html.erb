@@ -15,6 +15,7 @@
   <table class="table table-hover">
     <thead>
       <tr>
+        <th><%= sortable "Name" %></th>
         <th><%= sortable "user_id" %></th>
         <th><%= sortable "poster_email" %></th>
         <th><%= sortable "Description" %></th>
@@ -25,6 +26,7 @@
     <tbody>
     <% @posts.each do |post| %>
       <tr>
+        <td><%= User.find(post.user_id).name %></td>
         <td><%= post.user_id %></td>
         <td><%= link_to post.poster_email, post.user %></td>
         <td><%= link_to post.description, post %></td>
