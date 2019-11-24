@@ -40,3 +40,11 @@ color: #fff;
 background-color: #cb2431;
 border-color: #cb2431
 }
+
+#navbar-logo {
+    width: 46px;
+    height: 46px;
+    border-radius: 20%;
+    overflow: hidden;
+    margin-top: 1px;
+}
