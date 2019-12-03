@@ -7,6 +7,8 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :email, presence: true
   
+  acts_as_commontator
+  
   # Setup accessible (or protected) attributes for the model
   # attr_accessible :password, :password_confirmation
 end

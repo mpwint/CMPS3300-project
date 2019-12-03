@@ -12,6 +12,10 @@
     <strong>Poster email:</strong>
     <a href= "mailto:<%= @post.poster_email %>"> <%= @post.poster_email %></a>
   </p>
+  <p>
+    <strong>Poster:</strong>
+    <%= @post.user %>
+  </p>
 </div>
 
 <div class = "field col-xs-12 col-sm-6 col-sm-offset-3">
@@ -20,7 +24,8 @@
       <div class="card-body">
         <h5 class="card-title">Post title</h5>
         <h6 class="card-subtitle mb-2 text-muted"> <%= @post.updated_at %> </h6>
-        <p class="card-text"> <%= link_to @post.description, post_path(@post) %></p>
+        <p class="card-text"> <%= @post.description %></p>
+        <%= commontator_thread(@post) %>
       </div>
     </div>
     <br>

@@ -12,6 +12,7 @@ gem "aws-sdk-s3", require: false
 gem 'faker', '~> 1.6', '>= 1.6.6'
 gem 'devise'
 gem 'bootstrap_form'
+gem 'commontator', '~> 5.1'
 
 group :development, :test do
   gem 'sqlite3', '1.4.1'
