@@ -79,6 +79,9 @@ GEM
     bindex (0.8.1)
     bootsnap (1.4.4)
       msgpack (~> 1.0)
+    bootstrap_form (4.3.0)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
     builder (3.2.3)
     byebug (11.0.1)
     capybara (3.28.0)
@@ -271,6 +274,7 @@ PLATFORMS
 DEPENDENCIES
   aws-sdk-s3
   bootsnap (= 1.4.4)
+  bootstrap_form
   byebug (= 11.0.1)
   capybara
   cucumber-rails
