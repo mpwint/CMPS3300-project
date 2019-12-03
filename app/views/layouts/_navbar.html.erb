@@ -24,8 +24,8 @@
     <ul class="nav navbar-nav navbar-right">
       <% if user_signed_in? %>
         <li><a href = <%= edit_user_registration_path(current_user) %>><span class="glyphicon glyphicon-user"></span><%= current_user.email %></a></li>
-        <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'glyphicon glyphicon-log-in' %></li>
-        <% else %>
+        <li><a href="/users/sign_out"><span class="glyphicon glyphicon-log-in"></span> Logout </a></li>
+      <% else %>
         <li><a href="/users/sign_in"><span class="glyphicon glyphicon-log-in"></span> Login </a></li>
       <% end %>
     </ul>

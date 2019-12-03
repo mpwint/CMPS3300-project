@@ -1,36 +1,27 @@
-<h2>
+<h2>User</h2>
+
+<p>
+  <strong>Name:</strong>
   <%= @user.name %>
-</h2>
+</p>
 
-<div class = "center">
-  <%= link_to '< Back', users_path %>
-  <%= link_to 'Edit', edit_user_path(@user), :class => "btn btn-sm btn-primary btn-blue" %>
-  <%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure you want to delete this user?' }, :class => "btn btn-sm btn-primary btn-red" %>
-</div>
-<br>
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
 
-<div class = "center">
-  <p>
-    <strong>Email:</strong>
-    <a href= "mailto:<%= @user.email %>"> <%= @user.email %></a> | 
-    <strong>Major:</strong>
-    <%= @user.major %>
-  </p>
-</div>
+<p>
+  <strong>Major:</strong>
+  <%= @user.major %>
+</p>
 
-<div class = "field col-xs-12 col-sm-6 col-sm-offset-3">
-  <p>
-    <strong> <%= @user.name %>'s Posts:</strong>
-    <% @user.posts.each do |post| %>
-      <div class="card" style="width: 40rem;">
-        <!--<div class="card-header"> <%= @user.name %> </div>-->
-        <div class="card-body">
-          <h5 class="card-title">Post title</h5>
-          <h6 class="card-subtitle mb-2 text-muted"> <%= post.updated_at %> </h6>
-          <p class="card-text"> <%= link_to post.description, post_path(post) %></p>
-        </div>
-      </div>
-      <br>
-    <% end %>
-  </p>
-</div>
+<p>
+  <strong>Posts:</strong>
+  <% @user.posts.each do |post| %>
+    <%= link_to post.description, post_path(post) %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %> |
+<%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure you want to delete this user?' } %>
