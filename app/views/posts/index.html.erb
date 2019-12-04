@@ -70,7 +70,7 @@
 </head>
 <body>
 <div class="h1 ml-5">Posts</div>
-<div class="col-md-10 gedf-main" style="height:500px;width:95%; overflow:auto;">
+<div id="postsContainer" class="col-md-10 gedf-main" style="height:500px;width:95%; overflow:auto;">
   <% @posts.each do |post| %>
     <div class="card gedf-card">
       <div class="card-header">
@@ -141,6 +141,7 @@ function scrollFunction() {
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
+  document.getElementById("postsContainer").scrollTop = 0;
 }
 </script>
 
