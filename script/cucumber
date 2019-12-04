@@ -1,6 +1,12 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
+#feature/CMPS3300.feature Feature: As a product manager, I want users to begin on the login page.
+When(/^I open the root page$/) do visit
+root_path end Then(/^I see the login screen$/) do expect(page).to
+have_content("Log in") end
+
+
 vendored_cucumber_bin = Dir["#{File.dirname(__FILE__)}/../vendor/{gems,plugins}/cucumber*/bin/cucumber"].first
 if vendored_cucumber_bin
   load File.expand_path(vendored_cucumber_bin)
