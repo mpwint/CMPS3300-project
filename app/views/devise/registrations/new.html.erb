@@ -4,7 +4,8 @@
   <%= render "devise/shared/error_messages", resource: resource %>
   <%= f.text_field :name %>
   <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  
+  <%= f.select :major, ['Biology', 'Chemistry', 'Environmental Science', 'Marine Science', 'Dance', 'Theatre', 'English', 'History', 'Philosophy', 'Political Science', 'Psychology', 'Sociology'], include_blank: true, :class => "form-control" %>
+
   <% if @minimum_password_length %>
   <% end %><br />
   <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -12,5 +13,7 @@
   
   <%= f.submit "Sign up" %>
 <% end %>
-    
+
 <%= render "devise/shared/links" %>
+
+
