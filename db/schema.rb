@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2019_11_03_130537) do
 
   create_table "posts", force: :cascade do |t|
     t.string "poster_email"
+    t.string "title"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

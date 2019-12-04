@@ -51,7 +51,6 @@
         }
         li.ui-state-default{
             background:#fff0;
-            border:none;
             border-bottom:1px solid #ddd;
             text-align: left;
             padding-bottom: 10px;
@@ -71,84 +70,7 @@
 </head>
 <body>
 <div class="h1 ml-5">Posts</div>
-<div class="col-md-10 gedf-main">
-  <div class="card gedf-card" id="input">
-    <div style="background-color: rgb(56, 126, 230)">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item" style="margin-top: .75%; margin-left: 1.25%">
-                <a class="nav-link active" id="posts-tab" data-toggle="tab" href="#posts" role="tab" aria-controls="posts" aria-selected="true">
-                    Post Opportunity
-                </a>
-            </li>
-        </ul>
-    </div>
-    <div class="card-body">
-        <div class="tab-content" id="myTabContent">
-            <div class="row">
-                <div class="col">
-                    <div class="form-group" id="subject">
-                        <label>Subject:</label>
-                        <input type="text" id="subjectInput" class="form-control">
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-group" id="firstName">
-                        <label>First Name:</label>
-                        <input type="text" id="firstNameInput" class="form-control">
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-group" id="lastName">
-                        <label>Last Name:</label>
-                        <input type="text" id="lastNameInput" class="form-control">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label>Request Type:</label>
-                <select class="form-control" type="text" id="typeSelect" onchange="Select()">
-                    <option>(Select a request type)</option>
-                    <option>Looking for help</option>
-                    <option>Looking to help</option>
-                </select>
-            </div>
-            <div class="form-group" style="margin-bottom: 0">
-                <div class="row">
-                    <div class="col" id="companyNameContainer" style="display:none">
-                        <label>Company Name:</label>
-                        <input type="text" id="companyNameInput" class="form-control">
-                    </div>
-                    <div class="col" id="majorContainer" style="display:none">
-                        <label>Major:</label>
-                        <input type="text" id="majorInput" class="form-control">
-                    </div>
-                    <div class="col" id="tagsContainer" style="display:none">
-                        <label>Tags:</label>
-                        <div class="input-group mb-3">
-                            <input type="text" id="tagsInput" class="form-control">
-                            <button class="btn btn-outline-secondary" type="button" onclick="AddTag()">Add Tag</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group" id="description">
-                <label>Description:</label>
-                <textarea class="form-control" id="descriptionInput" rows="3" placeholder="Describe what you are looking for"></textarea>
-            </div>
-            <div class="form-group" id="website">
-                <label>Website or Linkedin link:</label>
-                <input type="text" id="linkInput" class="form-control">
-            </div>
-            <div id="tags">
-  
-            </div>
-            <p></p>
-  
-        </div>
-        <button type="submit" class="btn btn-primary" onclick="PostData()">Post</button>
-    </div>
-    <div id="errorMessage" style="display:none"></div>
-  </div>
+<div class="col-md-10 gedf-main" style="height:500px;width:95%; overflow:auto;">
   <% @posts.each do |post| %>
     <div class="card gedf-card">
       <div class="card-header">
@@ -156,8 +78,8 @@
         <div class="h7 text-muted"><%= post.updated_at %></div>
       </div>
       <div class="card-body">
-        <div class="h5 m-0">Name: <%= link_to post.poster_email, post.user %></div>
-        <div class="h6">Major: undefined</div>
+        <div class="h5 m-0">Name: <%= User.find(post.user_id).name %></div>
+        <div class="h6">Major: <%= User.find(post.user_id).major %></div>
         <p class="card-text">Description: <%= link_to post.description, post %></p>
       </div>
   

@@ -31,6 +31,6 @@ end
   Post.create!([{
     :user_id => User.first.id+index,
     :poster_email => User.find(User.first.id+index).email,
-    :description => Faker::Quote.famous_last_words
+    :description => Faker::Quote.famous_last_words,
   }])
 end
