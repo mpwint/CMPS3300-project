@@ -30,7 +30,7 @@
         <td><%= post.user_id %></td>
         <td><%= link_to post.poster_email, post.user %></td>
         <td><%= link_to post.description, post %></td>
-        <td><%= post.updated_at %></td>
+        <td><%= time_ago_in_words(post.updated_at) %> ago</td>
       </tr>
     <% end %>
   </tbody>

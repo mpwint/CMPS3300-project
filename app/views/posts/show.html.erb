@@ -13,8 +13,8 @@
     <a href= "mailto:<%= @post.poster_email %>"> <%= @post.poster_email %></a>
   </p>
   <p>
-    <strong>Poster:</strong>
-    <%= @post.user %>
+    <strong>Updated:</strong>
+    <%= time_ago_in_words(@post.updated_at) %> ago
   </p>
 </div>
 
