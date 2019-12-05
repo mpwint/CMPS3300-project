@@ -27,7 +27,7 @@ group :development do
 end
 
 group :test do
-  gem 'capybara',           '3.28.0'
+  #gem 'capybara',           '3.28.0' this is repeated below
   gem 'selenium-webdriver', '3.142.4'
   gem 'webdrivers',         '4.1.2'
 end
@@ -38,3 +38,17 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+group :test do
+
+gem "cucumber-rails", :require => false
+
+gem "cucumber-rails-training-wheels" #premade definitions
+
+gem "database_cleaner" # clears cucu data base between runs
+
+gem "capybara" # makes cucu like a browser
+
+gem "launchy" #debugging aid
+
+end
