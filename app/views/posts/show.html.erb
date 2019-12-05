@@ -12,6 +12,10 @@
     <strong>Poster email:</strong>
     <a href= "mailto:<%= @post.poster_email %>"> <%= @post.poster_email %></a>
   </p>
+  <p>
+    <strong>Updated:</strong>
+    <%= time_ago_in_words(@post.updated_at) %> ago
+  </p>
 </div>
 
 <div class = "field col-xs-12 col-sm-6 col-sm-offset-3">
