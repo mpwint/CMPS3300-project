@@ -46,7 +46,7 @@ Commontator.configure do |config|
   # comments will become a hyperlink pointing to this path
   # The main application's routes can be accessed through the app_routes object
   # Default: lambda { |user, app_routes| '' } (no link)
-  config.user_link_proc = lambda { |user, app_routes| app_routes.user_path }
+  config.user_link_proc = lambda { |current_user, app_routes| app_routes.user_path(current_user.id) }
 
   # user_avatar_proc
   # Type: Proc
@@ -199,7 +199,7 @@ Commontator.configure do |config|
   # Set to nil to disable pagination
   # Any other value requires the will_paginate gem
   # Default: nil (no pagination)
-  config.comments_per_page = nil
+  config.comments_per_page = 5
 
   # thread_subscription
   # Type: Symbol
