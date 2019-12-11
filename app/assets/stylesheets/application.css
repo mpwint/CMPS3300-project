@@ -20,6 +20,10 @@ h1, h2 {
     text-align: center;
 }
 
+a:hover {
+    background-color: #F67C29
+}
+
 .center {
   text-align: center;
 }
