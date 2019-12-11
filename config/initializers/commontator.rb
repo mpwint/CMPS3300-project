@@ -35,7 +35,7 @@ Commontator.configure do |config|
   # Arguments: a user (acts_as_commontator)
   # Returns: the user's name (String)
   # Default: lambda { |user| I18n.t('commontator.anonymous') } (all users are anonymous)
-  config.user_name_proc = lambda { |user| I18n.t('commontator.anonymous') }
+  config.user_name_proc = lambda { |user| user.name }
 
   # user_link_proc
   # Type: Proc
@@ -46,7 +46,7 @@ Commontator.configure do |config|
   # comments will become a hyperlink pointing to this path
   # The main application's routes can be accessed through the app_routes object
   # Default: lambda { |user, app_routes| '' } (no link)
-  config.user_link_proc = lambda { |user, app_routes| '' }
+  config.user_link_proc = lambda { |user, app_routes| app_routes.user_path }
 
   # user_avatar_proc
   # Type: Proc
@@ -254,7 +254,7 @@ Commontator.configure do |config|
   #   false (no mentions)
   #   true  (mentions enabled)
   # Default: false
-  config.mentions_enabled = false
+  config.mentions_enabled = true
 
   # user_mentions_proc
   # Type: Proc
@@ -275,5 +275,5 @@ Commontator.configure do |config|
   # Default: lambda { |current_user, query|
   #                   current_user.class.where('username LIKE ?', "#{query}%") }
   config.user_mentions_proc = lambda { |current_user, query|
-    current_user.class.where('username LIKE ?', "#{query}%") }
+    current_user.class.where('name LIKE ?', "#{query}%") }
 end
