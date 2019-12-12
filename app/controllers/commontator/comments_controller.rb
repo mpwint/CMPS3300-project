@@ -61,7 +61,8 @@ module Commontator
     # PUT /comments/1
     def update
       security_transgression_unless @comment.can_be_edited_by?(@user)
-      @comment.body = params[:comment].nil? ? nil : params[:comment][:body]
+      @comment.body=params[:comment][:body]
+      # @comment.body = params[:comment].nil? ? nil : params[:comment][:body]
       @comment.editor = @user
       subscribe_mentioned if Commontator.mentions_enabled
 
