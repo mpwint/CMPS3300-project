@@ -7,7 +7,7 @@ module Commontator
     def new
       @comment = Comment.new
       @comment.thread = @thread
-      @comment.creator = current_user
+      @comment.creator = @user
       security_transgression_unless @comment.can_be_created_by?(@user)
 
       @per_page = params[:per_page] || @thread.config.comments_per_page
@@ -24,8 +24,7 @@ module Commontator
       @comment = Comment.new
       @comment.thread = @thread
       @comment.creator = @user
-      @comment.body=params[:comment][:body]
-      
+      @comment.body = params[:comment].nil? ? nil : params[:comment][:body]
       security_transgression_unless @comment.can_be_created_by?(@user)
       subscribe_mentioned if Commontator.mentions_enabled
 
@@ -37,7 +36,9 @@ module Commontator
           sub = @thread.config.thread_subscription.to_sym
           @thread.subscribe(@user) if sub == :a || sub == :b
           Subscription.comment_created(@comment)
+
           @per_page = params[:per_page] || @thread.config.comments_per_page
+
           format.html { redirect_to @thread }
           format.js
         else
@@ -60,7 +61,8 @@ module Commontator
     # PUT /comments/1
     def update
       security_transgression_unless @comment.can_be_edited_by?(@user)
-      @comment.body = params[:comment].nil? ? nil : params[:comment][:body]
+      @comment.body=params[:comment][:body]
+      # @comment.body = params[:comment].nil? ? nil : params[:comment][:body]
       @comment.editor = @user
       subscribe_mentioned if Commontator.mentions_enabled
 
